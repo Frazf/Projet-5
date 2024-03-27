@@ -17,28 +17,36 @@ const slides = [
 	}
 ]
 
-const arrow_left = document.querySelector(".arrow-left")
-const arrow_right = document.querySelector(".arrow-right")
+let arrow_left = document.querySelector(".arrow_left")
+const arrow_right = document.querySelector(".arrow_right")
 let index = 0;
 
 // Flèche 
 
-
-arrow_left.addEventListener("click",function(){
-	index--;
+arrow_right.addEventListener("click",function(){
+	index++;
+	if(index >= slides.length ){
+		index = 0;
+	}
+	console.log("Index est : " + index);
 	displayDots(index);
 })
 
-arrow_right.addEventListener("click",function(){
-	index++;
+arrow_left.addEventListener("click",function(){
+	index--;
+	if(index < 0){
+		index = slides.length -1;
+	}
+	console.log("Index est : " + index);
+	displayDots(index);
 })
 
 // Slides
-
-function displayDots(){
+function displayDots(index){
+	const dots = document.querySelector(".dots");
 	dots.innerHTML = "";
 
-	for(let i = 0; i < slides.length; i++){
+	for(let i = 0; i < slides.length; i++){   // slides.legth sert a selectionner toute les slide en haut de la page et i est le compteur de slide
 		let dot = document.createElement("span");
 		dot.classList.add("dot");
 		if(i == index){
