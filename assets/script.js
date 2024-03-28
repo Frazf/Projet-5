@@ -30,29 +30,31 @@ arrow_right.addEventListener("click",function(){
 		index = 0; // Réinitialise l'index à 0 s'il dépasse
 	}
 	console.log("Index est : " + index); // Affiche l'index actuel dans la console
-	displayDots(index); 
+	displayDots(index); // Appelle la fonction pour afficher les points indicateurs
 })
 // Ajoute un écouteur d'événements sur le clic de la flèche gauche
 arrow_left.addEventListener("click",function(){
 	index--; // Décrémente l'index 
-	if(index < 0){
-		index = slides.length -1;
-	}
-	console.log("Index est : " + index);
-	displayDots(index);
+	if(index < 0){ // Vérifie si l'index est inférieur à 0
+		index = slides.length -1;  // Réinitialise l'index au dernier élément s'il est inférieur à 0
+	} 
+	console.log("Index est : " + index); // Affiche l'index actuel dans la console
+	displayDots(index); // Appelle la fonction pour afficher les points indicateurs
 })
 
 // Slides
-function displayDots(index){
-	const dots = document.querySelector(".dots");
-	dots.innerHTML = "";
 
-	for(let i = 0; i < slides.length; i++){   // slides.legth sert a selectionner toute les slide en haut de la page et i est le compteur de slide
-		let dot = document.createElement("span");
-		dot.classList.add("dot");
-		if(i == index){
-			dot.classList.add("active");
+// Fonction pour afficher les points indicateurs
+function displayDots(index){ 
+	const dots = document.querySelector(".dots"); // Sélectionne l'élément avec la classe "dots" et le stocke dans la constante dots
+	dots.innerHTML = ""; // Efface tout contenu précédent dans l'élément "dots"
+
+	for(let i = 0; i < slides.length; i++){   // slides.legth sert a selectionner toute les slide en haut de la page et i est le compteur de slide (// Boucle à travers toutes les slides)
+		let dot = document.createElement("span"); // Crée un élément span pour chaque point indicateur
+		dot.classList.add("dot"); // Ajoute la classe "dot" à chaque point indicateur
+		if(i == index){ // Vérifie si l'indice de la boucle correspond à l'index actuel
+			dot.classList.add("active"); // Ajoute la classe "active" au point indicateur correspondant à l'index actuel
 		}
-		dots.appendChild(dot);
+		dots.appendChild(dot); // Ajoute le point indicateur à l'élément "dots"
 	}
 }
