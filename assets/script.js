@@ -19,12 +19,12 @@ const slides = [
 
 /*Variable globales*/
 
-const dots = document.querySelector(".dots");
-const arrowRight = document.querySelector(".arrow_right");
-const arrowLeft = document.querySelector(".arrow_left");
-const img = document.querySelector(".banner-img");
-const h2 = document.querySelector("#banner p")
-let index = 0;
+const dots = document.querySelector(".dots");                                  // Sélectionne l'élément HTML avec la classe "dots" (points)
+const arrowRight = document.querySelector(".arrow_right");                       // Sélectionne l'élément HTML avec la classe "arrow_right" (flèche droite)
+const arrowLeft = document.querySelector(".arrow_left");                        // Sélectionne l'élément HTML avec la classe "arrow_left" (flèche gauche)
+const img = document.querySelector(".banner-img");                           // Sélectionne l'élément HTML avec la classe "banner-img" (image de la bannière)
+const h2 = document.querySelector("#banner p")                              // Sélectionne l'élément HTML avec l'id "banner" et trouve son paragraphe (titre)
+let index = 0;                                                            // Initialise un index pour suivre la position actuelle dans le carrousel d'images
 
 
 
